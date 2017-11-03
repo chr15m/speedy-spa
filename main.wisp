@@ -18,8 +18,8 @@
                 "+"))
           (if (.-length things)
             (m :div
-               [(m :span "Things:")
+               [(m :span "Random numbers:")
                 (view-thing-list)])
-            (m :span "No things yet."))]))])
+            (m :span "No numbers yet."))]))])
 
 (m.mount (document.getElementById "app") {"view" view})
