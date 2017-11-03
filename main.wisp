@@ -1,6 +1,6 @@
 (def things [])
 
-(defn add-thing []
+(defn add-thing! []
   (.push things (Math.random)))
 
 (defn view-thing-list []
@@ -13,7 +13,7 @@
    (m :div {:class "mui-container"}
       (m :div {:class "mui-panel"}
          [(m :div {:class "mui--text-right"}
-             (m :button {:onclick add-thing
+             (m :button {:onclick add-thing!
                          :class "mui-btn mui-btn--large mui-btn--primary mui-btn--fab mui--text-display2"}
                 "+"))
           (if (.-length things)
