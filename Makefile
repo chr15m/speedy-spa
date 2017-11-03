@@ -15,5 +15,7 @@ main.js: main.wisp
 artifact.html: main.js index.template.html style.css
 	gpp -Dtitle="Ok!" -H index.template.html > $@
 
+.PHONY: clean
+
 clean:
 	rm -f artifact.html main.js build
