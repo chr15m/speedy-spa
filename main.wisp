@@ -9,7 +9,7 @@
 (defn view []
   [(m :header
       (m :div {:class "mui-appbar mui--appbar-line-height mui--text-right"}
-         (m :span {:class "mui--text-justify" :style "margin-right: 1em;"} "hello")))
+         (m :span {:class "mui--text-justify" :style "margin-right: 1em;"} (m :a {:href "https://github.com/chr15m/speedy-spa"} "source code"))))
    (m :div {:class "mui-container"}
       (m :div {:class "mui-panel"}
          [(m :div {:class "mui--text-right"}
