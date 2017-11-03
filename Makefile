@@ -1,10 +1,16 @@
-all: index.html mithril.min.js mui.min.css
+all: build/index.html build/mithril.min.js build/mui.min.css
 
-mithril.min.js:
-	curl -s https://unpkg.com/mithril@1.1.5/mithril.min.js > mithril.min.js
+build:
+	mkdir -p build
 
-mui.min.css:
-	curl -s https://cdn.muicss.com/mui-0.9.28/css/mui.min.css > mui.min.css
+build/index.html: artifact.html build build/mithril.min.js build/mui.min.css
+	html-minifier --minify-css --minify-js --collapse-whitespace < $< > $@
+
+build/mithril.min.js:
+	curl -s https://unpkg.com/mithril@1.1.5/mithril.min.js > build/mithril.min.js
+
+build/mui.min.css:
+	curl -s https://cdn.muicss.com/mui-0.9.28/css/mui.min.css > build/mui.min.css
 
 main.js: main.wisp
 	wisp --no-map < $< > $@
@@ -12,8 +18,5 @@ main.js: main.wisp
 artifact.html: main.js index.template.html style.css
 	gpp -Dtitle="Ok!" -H index.template.html > $@
 
-index.html: artifact.html mithril.min.js mui.min.css
-	html-minifier --minify-css --minify-js --collapse-whitespace < $< > $@
-
 clean:
-	rm -f artifact.html main.js index.html mithril.min.js mui.min.css
+	rm -f artifact.html main.js build
