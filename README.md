@@ -1,5 +1,9 @@
 This is an experiment to see how small and fast an interactive single-page web application written in LISP can be.
 
+According to [webpagetest.org](https://www.webpagetest.org/result/171103_6G_c1b547f215b64acf122c6269b2895e45/) time-to-interact with all content fully loaded is under 500ms (half a second).
+
+![Screenshot of the app](./screenshot.png)
+
 Source code in [main.wisp](./main.wisp) with a [Makefile](./Makefile) for building.
 
 ## How
