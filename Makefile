@@ -18,4 +18,4 @@ artifact.html: main.js index.template.html style.css
 .PHONY: clean
 
 clean:
-	rm -f artifact.html main.js build
+	rm -f artifact.html main.js build/*
